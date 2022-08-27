@@ -1,7 +1,7 @@
 export default function refs () {
  return {
     form:document.querySelector('#search-form'),
-    divGallery:document.querySelector('.gallery'),
-    buttonGallery:document.querySelector('.button-gallery')
+    divGallery:document.querySelector('.js-gallery'),
+    buttonGallery:document.querySelector('.js-button-gallery')
  }
 }

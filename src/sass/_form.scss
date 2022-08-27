@@ -1,0 +1,25 @@
+.search-form {
+    text-align: center
+}
+
+.form-input {
+    font-size:22px;
+    border:2px solid ;
+    border-radius: 4px;
+    padding: 6px 12px;
+    line-height: 1.3;
+    margin-right: 25px;
+}
+
+.form-button,
+.load-more
+{
+    @extend %button;
+    &:hover,
+    &:focus
+    {
+        @extend %hover-focus;
+    }
+    
+}
+
