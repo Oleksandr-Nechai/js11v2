@@ -5,3 +5,4 @@ export default function refs () {
     buttonGallery:document.querySelector('.js-button-gallery')
  }
 }
+

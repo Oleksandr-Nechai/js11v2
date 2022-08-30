@@ -8,13 +8,22 @@
     <script type="module" src="./index.js"></script>
   </head>
   <body>
-    <form class="search-form" id="search-form">
+    <form class="form" id="search-form">
       <input
       class="form-input"
         type="text"
         name="searchQuery"
         autocomplete="off"
         placeholder="Search images..."
+      />
+      <input
+      class="form-page"
+        type="number"
+        name="perPage"
+        autocomplete="off"
+        placeholder="How many..."
+        min="3"
+        max="200"
       />
       <button type="submit" class="form-button">Search</button>
     </form>

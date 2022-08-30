@@ -8,7 +8,7 @@ export default class ApiService {
     constructor(){
         this.searchValue="";
         this.searchPage=1;
-        this.perPage=40
+        this.perPage="";
     }
 
     fetchApi () {
