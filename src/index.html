@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>11v2</title>
+    <link rel="stylesheet" href="./sass/index.scss" />
+    <script type="module" src="./index.js"></script>
+  </head>
+  <body>
+    <form class="form" id="search-form">
+      <input
+      class="form-input"
+        type="text"
+        name="searchQuery"
+        autocomplete="off"
+        placeholder="Search images..."
+      />
+      <input
+      class="form-page"
+        type="number"
+        name="perPage"
+        autocomplete="off"
+        placeholder="How many..."
+        min="3"
+        max="200"
+      />
+      <button type="submit" class="form-button">Search</button>
+    </form>
+    <div class="js-gallery gallery">
+      <!-- Карточки изображений -->
+    </div>
+    <div class="js-button-gallery button-gallery">
+    </div>
+  </body>
+</html>

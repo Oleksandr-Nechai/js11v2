@@ -1,0 +1,39 @@
+body{
+    padding: 0 15 15;
+}
+
+li {
+    list-style:none
+}
+ ul,p{
+    margin: 0;
+    padding: 0;
+ }
+ b {
+    display: block;
+  }
+
+ %button {
+    padding: 4px 8px;
+    border:2px solid black;
+    border-radius: 4px;
+    font-size:16px;
+    line-height: 1.2;
+    cursor: pointer;
+ }
+
+%hover-focus {
+    color:white;
+    background-color: blue;
+    
+    
+}
+
+%input {
+    margin-right: 25px;
+    padding: 4px 8px;
+    border:2px solid ;
+    border-radius: 4px;
+    font-size:16px;
+    line-height: 1.2;
+}

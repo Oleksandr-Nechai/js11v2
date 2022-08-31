@@ -1,0 +1,33 @@
+.form {
+    position:fixed;
+    top:0;
+    left:0;
+    z-index: 1;
+    width: 100%;
+    padding: 12px 0;
+    text-align: center;
+    background-color: rgba(0, 255, 38, 0.5);
+}
+
+
+.form-input {
+   @extend %input;
+   
+}
+.form-page {
+    @extend %input;
+    min-width: 120;
+}
+
+.form-button,
+.load-button
+{
+    @extend %button;
+    &:hover,
+    &:focus
+    {
+        @extend %hover-focus;
+    }
+    
+}
+
