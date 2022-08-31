@@ -48,7 +48,7 @@ this.isMarkup?this.#insertContinueMarkup(stringListMarkup):this.insertStartMarku
     }
 
     createButtonMarkup () {
-      
+
       const button =`<button type="button" class="load-button">Load more</button>`;
             return this.insertStartMarkup(button,'buttonGallery')
     }

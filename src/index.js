@@ -27,8 +27,10 @@ function handleFormSubmit (e) {
         e.preventDefault();
         const searchQuery = e.currentTarget.searchQuery.value.trim();
         const perPage = Number(e.currentTarget.perPage.value.trim())
+
       
         if(!searchQuery){
+
 
 createMarkup.insertStartMarkup("","buttonGallery");
 createMarkup.insertStartMarkup("")
@@ -38,7 +40,7 @@ return
         }
 
         if(apiService.value===searchQuery){
-          
+
             Notiflix.Notify.info('Search already done, change selection.',messageOptions);
             return
         }
@@ -63,16 +65,18 @@ fetchApiData ()
 }
 
 
+
 async function fetchApiData () {
     try {
         const data = await apiService.fetchApi()
      
+
         if(!data.hits.length){
             return Promise.reject(new Error())
                        }
         createMarkup.data=data
         createMarkup.createListMarkup()
-      
+
         Notiflix.Notify.success(`Hooray! We found ${data.hits.length} images.`,messageOptions);
         gallery.refresh()
 
@@ -83,21 +87,19 @@ async function fetchApiData () {
             if(!(apiService.page===1)){
                 Notiflix.Notify.info("We're sorry, but you've reached the end of search results.",messageOptions); 
             }
-          
+
           return
         }
         if(apiService.page===1){
             createMarkup.createButtonMarkup()
         }
+
     }
     catch {
         Notiflix.Notify.failure("Sorry, there are no images matching your search query. Please try again.",messageOptions)
     }
     }
-        
-       
-    
-    
+
 
 
 function scrollerByViewport () {
@@ -115,6 +117,7 @@ function scrollerByViewport () {
       });
        } 
        else if (useScroll) { 
+
         const positionViewport = document.documentElement.getBoundingClientRect()
         useScroll=false;
         window.scrollBy({
@@ -134,3 +137,4 @@ if(x.bottom<document.documentElement.clientHeight+150){
     fetchApiData ()
 }
     })
+

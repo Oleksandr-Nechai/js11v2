@@ -1,4 +1,6 @@
+
 import axios from 'axios';
+
 const KEY = "24494931-7dc5820272f9876b2770bf0f4";
 const BASE_URL = "https://pixabay.com/api/";
 
@@ -11,6 +13,7 @@ export default class ApiService {
         this.searchPage=1;
         this.perPage="";
     }
+
     
    async fetchApi () {
     const paramsAxios = {
@@ -30,6 +33,7 @@ export default class ApiService {
             return Promise.reject(new Error());
         }
         return response.data}
+
 
 get value () {
    return this.searchValue;
