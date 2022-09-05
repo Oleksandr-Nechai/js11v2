@@ -75,7 +75,7 @@ function handleFormSubmit (e) {
         
         apiService.value=searchQuery;
        
-        apiService.page=1;
+        apiService.resetPage ();
         createMarkup.isMarkup=false;
       
         fetchApiData ()
@@ -178,7 +178,7 @@ function scrollerByViewportWithButton () {
             return
         } 
         
-    apiService.page+=1;
+    apiService.incrementPage ()
     createMarkup.isMarkup=true;
     fetchApiData ()
     }
@@ -194,7 +194,7 @@ function scrollLoader () {
        if(locationViewport.bottom<heightViewport*3)
        {
         
-           apiService.page+=1;
+           apiService.incrementPage ()
            createMarkup.isMarkup=true;
            fetchApiData ()
        }

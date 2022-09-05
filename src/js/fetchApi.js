@@ -34,7 +34,13 @@ export default class ApiService {
         }
         return response.data}
 
+     resetPage () {
+        this.searchPage=1;
+     }
 
+     incrementPage () {
+        this.searchPage+=1;
+     }
 get value () {
    return this.searchValue;
 }
