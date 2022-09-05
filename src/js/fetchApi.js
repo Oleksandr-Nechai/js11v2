@@ -1,4 +1,3 @@
-
 import axios from 'axios';
 
 const KEY = "24494931-7dc5820272f9876b2770bf0f4";
@@ -17,6 +16,7 @@ export default class ApiService {
     
    async fetchApi () {
     const paramsAxios = {
+        timeout: 5000,
         params:{
             key:KEY,
             q:this.searchValue,

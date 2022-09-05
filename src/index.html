@@ -9,26 +9,51 @@
   </head>
   <body>
     <form class="form" id="search-form">
-      <input
-      class="form-input"
-        type="text"
-        name="searchQuery"
-        autocomplete="off"
-        placeholder="Search images..."
-      />
-      <input
-      class="form-page"
-        type="number"
-        name="perPage"
-        autocomplete="off"
-        placeholder="How many..."
-        min="3"
-        max="200"
-      />
-      <button type="submit" class="form-button">Search</button>
+      <div class="form-position">
+    <div class="form-item">
+      <label >Search images
+        <input
+       class="form-input"
+         type="text"
+         name="searchQuery"
+         autocomplete="off"
+         placeholder="Search images..."
+       />
+     </label>
+    </div>
+    <div class="js-load-more form-item">
+      <p >Load more...</p>
+     
+    <div class="form-radio">
+    <label>
+      Button
+      <input class="form-input-ration" type="radio" name="load" value="buttonJS" checked />
+    </label>
+    <label>
+      Scroll
+      <input class="form-input-ration" type="radio" name="load" value="scrollJS"/>
+    </label>
+    </div>
+  </div>
+      <div class="form-item">
+        <label >How many images
+          <input
+        class="js-form-input form-input"
+          type="number"
+          name="perPage"
+          autocomplete="off"
+          placeholder="How many..."
+          min="3"
+          max="200"
+        />
+        </label>
+      </div>
+      <div class="form-button">
+        <button type="submit" class="js-form-button button">Search</button>
+      </div>
+      </div>
     </form>
     <div class="js-gallery gallery">
-      <!-- Карточки изображений -->
     </div>
     <div class="js-button-gallery button-gallery">
     </div>

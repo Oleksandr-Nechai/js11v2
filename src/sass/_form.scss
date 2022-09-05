@@ -4,30 +4,55 @@
     left:0;
     z-index: 1;
     width: 100%;
-    padding: 12px 0;
-    text-align: center;
+    display: flex;
     background-color: rgba(0, 255, 38, 0.5);
+    padding: 5px 0;;
+  }
+.form-position{
+    margin: auto;
+    display: flex;
 }
 
+.form-item {
+    width:150px;
+    margin-right: 30px;
+ 
+}
 
 .form-input {
    @extend %input;
+   &:disabled{
+    background-color: rgba(154, 164, 168, 0.4);
+   }
    
 }
-.form-page {
-    @extend %input;
-    min-width: 120;
-}
 
-.form-button,
-.load-button
-{
+
+.form-button {
+padding-top: 23px;
+
+}
+.form-radio {
+    margin-top: 3px;
+    display: flex;
+    justify-content: space-between;
+   
+}
+.form-input-ration {
+    margin-left: 3px;
+    margin-bottom: 1px;
+    vertical-align: text-bottom;
+    width: 18px;
+    height:18px;
+   
+
+   
+}
+.button {
     @extend %button;
-    &:hover,
-    &:focus
-    {
-        @extend %hover-focus;
+    &:hover,&:focus {
+        @extend %hover-focus ;
     }
-    
+  
 }
 
