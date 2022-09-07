@@ -5,6 +5,7 @@ import Notiflix from 'notiflix';
 import SimpleLightbox from 'simplelightbox';
 import throttle from 'lodash.throttle';
 
+
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
 const refs = elementsRefs();
@@ -75,7 +76,7 @@ function handleFormSubmit (e) {
         
         apiService.value=searchQuery;
        
-        apiService.resetPage ();
+        apiService.resetPage();
         createMarkup.isMarkup=false;
       
         fetchApiData ()
@@ -84,14 +85,18 @@ function handleFormSubmit (e) {
 
 async function fetchApiData () {
     try {
+        
         goApi = false;
         Notiflix.Loading.hourglass({
             svgColor: '#65dcce',
             svgSize: '100px',
             backgroundColor: 'rgba(0,0,0,0.3)',
           });
+          
           refs.buttonGallery.firstElementChild?.setAttribute('disabled', 'disabled');
+
           refs.formButton.setAttribute('disabled', 'disabled');
+         
         const data = await apiService.fetchApi()
         Notiflix.Loading.remove();
         refs.buttonGallery.firstElementChild?.removeAttribute('disabled');
@@ -147,7 +152,7 @@ async function fetchApiData () {
         Notiflix.Notify.failure("Sorry, there are no images matching your search query. Please try again.",messageOptions);
         Notiflix.Loading.remove();
         refs.buttonGallery.firstElementChild?.removeAttribute('disabled');
-        refs.formButton.removeAttribute('disabled');
+        refs.formButton?.removeAttribute('disabled');
     }
     }
 

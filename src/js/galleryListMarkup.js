@@ -1,8 +1,17 @@
+import {templateButton,templateListCards} from "./createMarkup"
+
+
 export default class CreateMarkup {
+  #buttonMarkup;
+  #listCardsMarkup;
     constructor(refs){
+this.#buttonMarkup= templateButton;
+this.#listCardsMarkup=templateListCards;
+
 this.refs=refs;
 this.dataArray=[];
 this.isMarkup=false;
+
     }
 
     insertStartMarkup (string,position="divGallery") {
@@ -16,41 +25,14 @@ this.isMarkup=false;
     }
     createListMarkup () {
        
-        const stringListMarkup = this.dataArray.hits.map(({webformatURL,largeImageURL,tags,likes,views,comments,downloads})=>
-        `<a class="gallery-item" href="${largeImageURL}" >
-        <div class="gallery-card">
-<div class="gallery-photo">
-<img class="gallery-img" src="${webformatURL}" alt="${tags}" loading="lazy" />
-</div>
-<div class="gallery-info">
-  <p class="gallery-info-item">
-    <b>Likes</b>
-    ${likes}
-  </p>
-  <p class="gallery-info-item">
-    <b>Views</b>
-    ${views}
-  </p>
-  <p class="gallery-info-item">
-    <b>Comments</b>
-    ${comments}
-  </p>
-  <p class="gallery-info-item">
-    <b>Downloads</b>
-    ${downloads}
-  </p>
-</div>
-</div>
-</a>`).join('');
-
-this.isMarkup?this.#insertContinueMarkup(stringListMarkup):this.insertStartMarkup(stringListMarkup);
+    const stringListMarkup = this.dataArray.hits.map(({webformatURL,largeImageURL,tags,likes,views,comments,downloads})=>(this.#listCardsMarkup({largeImageURL,webformatURL,tags,likes,views,comments,downloads}))).join('');
+       
+    this.isMarkup?this.#insertContinueMarkup(stringListMarkup):this.insertStartMarkup(stringListMarkup);
 
     }
 
     createButtonMarkup () {
-
-      const button =`<button type="button" class="button">Load more</button>`;
-            return this.insertStartMarkup(button,'buttonGallery')
+    return this.insertStartMarkup(this.#buttonMarkup(),'buttonGallery')
     }
   
 

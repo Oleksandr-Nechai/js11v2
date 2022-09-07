@@ -36,6 +36,7 @@ export default class ApiService {
 
      resetPage () {
         this.searchPage=1;
+        
      }
 
      incrementPage () {
