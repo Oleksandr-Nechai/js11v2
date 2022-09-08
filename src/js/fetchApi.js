@@ -3,8 +3,6 @@ import axios from 'axios';
 const KEY = "24494931-7dc5820272f9876b2770bf0f4";
 const BASE_URL = "https://pixabay.com/api/";
 
-
-
 export default class ApiService {
     
     constructor(){
@@ -13,7 +11,6 @@ export default class ApiService {
         this.perPage="";
     }
 
-    
    async fetchApi () {
     const paramsAxios = {
         timeout: 5000,
@@ -28,38 +25,44 @@ export default class ApiService {
 
         }
     }
-        const response = await axios.get(`${BASE_URL}`,paramsAxios);
-        if(response.status === 404){
-            return Promise.reject(new Error());
-        }
-        return response.data}
+    const response = await axios.get(`${BASE_URL}`,paramsAxios);
+
+    if(response.status === 404){
+        return Promise.reject(new Error());
+    }
+    return response.data}
 
      resetPage () {
         this.searchPage=1;
-        
      }
 
      incrementPage () {
         this.searchPage+=1;
      }
-get value () {
+
+    get value () {
    return this.searchValue;
-}
-set value (newValue) {
+    }
+
+    set value (newValue) {
     this.searchValue=newValue;
-}
-get page () {
+    }
+
+    get page () {
     return this.searchPage
-}
-set page (newPage) {
- this.searchPage=newPage
-}
-get itemsOnPage () {
+    }
+
+    set page (newPage) {
+    this.searchPage=newPage
+    }
+
+    get itemsOnPage () {
     return this.perPage
-}
-set itemsOnPage (newItemsOnPage) {
-  this.perPage=newItemsOnPage;
-}
+    }
+    
+    set itemsOnPage (newItemsOnPage) {
+    this.perPage=newItemsOnPage;
+    }
 
 }
 

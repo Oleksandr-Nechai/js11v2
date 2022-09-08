@@ -4,15 +4,17 @@ body{
 }
 
 li {
-    list-style:none
+    list-style:none;
 }
- ul,p{
+
+ul,p{
     margin: 0;
     padding: 0;
- }
- b {
+}
+
+b {
     display: block;
-  }
+}
 
  %button {
     padding: 0 8px;
@@ -23,17 +25,11 @@ li {
     &:disabled{
         background-color: rgb(0, 255, 234);
     }
- 
-    
-   
-
  }
 
 %hover-focus {
     color:white;
     background-color: blue;
-    
-    
 }
 
 %input {
@@ -43,6 +39,5 @@ li {
    margin-top: 3px;
     padding: 4px 6px;
     border:2px solid ;
-    border-radius: 4px;
-        
+    border-radius: 4px;    
 }
